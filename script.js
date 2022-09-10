@@ -43,8 +43,11 @@ function handleSubmit() {
 const render = () => {
     //get item from local storage and convert parse import because forEach use and show ui
     const toDos = JSON.parse(localStorage.getItem('To-Dos'));
-    toDos.forEach(todo => {
-        const ul = document.getElementById('todo-list');
+    // catch ul container
+    const ul = document.getElementById('todo-list');
+    // 
+    ul.textContent = ''
+    toDos?.forEach(todo => {
         const li = document.createElement('li')
         li.classList.add('py-2')
         li.innerText = todo.title
